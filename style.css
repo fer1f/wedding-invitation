@@ -1,0 +1,169 @@
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+
+        }
+        .phone-frame {
+            width: 600px;         /* lebar seperti HP */
+            background: url('asset/img/background.png') no-repeat center top;
+            background-size: cover;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2); /* biar ada efek bayangan */
+            
+        }
+        .overlay {
+           
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 30px 0px 30px 0px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .couple-img {
+            width: 520px;
+            height: 520px;         /* tinggi tetap */
+            object-fit: cover;     /* gambar tidak distorsi */
+            object-position: center; /* posisi gambar di tengah */
+            
+            display: block;
+            border: none;
+        }
+
+        .title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 38px;
+            margin-bottom: 5px;
+        }
+        .names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 60px;
+            margin: 0 0 10px 0;
+            line-height: 1.2;
+            color: #2c2c2c;
+        }
+
+        .date {
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #2c2c2c;
+            margin: 0 0 30px 0;
+        }
+
+
+
+        /* COUNTDOWN */
+        .countdown {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2px; /* jarak antar kolom */
+            margin: 0 0 40px 0;
+            font-family: 'Poppins', sans-serif;
+            perspective: 1000px; /* bikin efek 3D */
+        }
+        .countdown div {
+            text-align: center;
+            min-width: 10px;
+        }
+        /* titik dua */
+        .time-box {
+    text-align: center;
+    min-width: 70px;
+}
+
+
+
+.time-box small {
+    display: block;
+    font-size: 14px;      /* ukuran label */
+
+    margin-top: 4px;
+    color: #444;
+}
+
+.digit {
+  display: inline-block;
+  font-size: 30px;
+  color: #00000083;
+  min-width: 18px; /* biar tidak loncat-loncat */
+  text-align: center;
+}
+
+
+.colon {
+    font-size: 30px;      /* ukuran titik dua */
+    line-height: 1;
+    margin: 0 0 30px 0;
+    color: #000;
+}
+
+/* 📱 Versi Mobile (otomatis menyesuaikan ukuran layar) */
+@media (max-width: 500px) {
+    .time-box {
+        min-width: 55px;
+    }
+    .time-box span {
+        font-size: 34px;   /* angka lebih kecil */
+    }
+    .time-box small {
+        font-size: 12px;   /* label lebih kecil */
+    }
+    .colon {
+        font-size: 32px;   /* titik dua lebih kecil */
+    }
+}
+
+
+        /* Animasi angka naik ke atas */
+@keyframes flipUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    49% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.flip {
+    display: inline-block;
+    animation: flipUp 0.6s ease;
+}
+
+        /* Tombol */
+        .btn {
+            background: #333;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #555;
+        }

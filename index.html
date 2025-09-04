@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Intimate Wedding</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (ikon) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="phone-frame">
+    <div class="overlay">
+        <div class="title" data-aos="fade-down">The Intimate Wedding</div>
+        <div class="title" data-aos="fade-down">Of</div>
+
+        <!-- Ganti dengan asset Anda -->
+        <img src="asset/img/pasangan.png" alt="Couple" class="couple-img" data-aos="zoom-in">
+
+        <div class="names" data-aos="fade-up">Sasya & Rezky</div>
+        <div class="date" data-aos="fade-right">KAMIS, 25 SEPTEMBER 2025</div>
+
+        <!-- Countdown Timer -->
+        <!-- COUNTDOWN -->
+<div class="countdown" id="countdown" data-aos="zoom-out">
+    <div class="time-box">
+        <span>
+            <span class="digit" id="daysTens">0</span>
+            <span class="digit" id="daysOnes">0</span>
+        </span>
+        <small>HARI</small>
+    </div>
+    <div class="colon">:</div>
+    <div class="time-box">
+        <span>
+            <span class="digit" id="hoursTens">0</span>
+            <span class="digit" id="hoursOnes">0</span>
+        </span>
+        <small>JAM</small>
+    </div>
+    <div class="colon">:</div>
+    <div class="time-box">
+        <span>
+            <span class="digit" id="minutesTens">0</span>
+            <span class="digit" id="minutesOnes">0</span>
+        </span>
+        <small>MNT</small>
+    </div>
+    <div class="colon">:</div>
+    <div class="time-box">
+        <span>
+            <span class="digit" id="secondsTens">0</span>
+            <span class="digit" id="secondsOnes">0</span>
+        </span>
+        <small>DTK</small>
+    </div>
+</div>
+
+
+
+        <!-- Tombol -->
+        <a href="undangan.php" class="btn"">
+            <i class="fa-solid fa-envelope"></i> Buka Undangan
+        </a>
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200, // durasi animasi (ms)
+    once: false,
+    mirror: true
+  });
+</script>
+
+<script>
+const targetDate = new Date("2025-09-25T00:00:00").getTime();
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  let distance = targetDate - now;
+
+  if (distance < 0) distance = 0;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((distance / (1000 * 60)) % 60);
+  const seconds = Math.floor((distance / 1000) % 60);
+
+  updateDigits("days", days);
+  updateDigits("hours", hours);
+  updateDigits("minutes", minutes);
+  updateDigits("seconds", seconds);
+}
+
+function updateDigits(prefix, value) {
+  const str = value.toString().padStart(2, "0");
+  const tens = str[0];
+  const ones = str[1];
+
+  updateSingleDigit(`${prefix}Tens`, tens);
+  updateSingleDigit(`${prefix}Ones`, ones);
+}
+
+function updateSingleDigit(id, newValue) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (el.textContent !== newValue) {
+    el.textContent = newValue;
+    el.classList.remove("flip");
+    void el.offsetWidth; // reset animasi
+    el.classList.add("flip");
+  }
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+
+</body>
+</html>
