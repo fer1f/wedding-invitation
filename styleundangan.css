@@ -303,7 +303,7 @@ section {
    Section 4: Gallery & Gift
    =============================== */
 .gallery-gift-section {
-    background: url('asset/img/background.png') no-repeat center center;
+    background: linear-gradient(rgba(0, 90, 5, 0.007), rgba(0, 90, 5, 0.007)),  url('asset/img/background.png') no-repeat center center;
     background-size: cover;
     padding: 80px 20px;
 }
@@ -1035,7 +1035,7 @@ section {
 
 /* Section 10: Footer */
 .footer-section {
-    background: url('asset/img/bg2.png') repeat center center; 
+    background: url('asset/img/bg1.png') repeat center center; 
     color: white;
     text-align: center;
     padding: 20px 20px;
@@ -1373,3 +1373,33 @@ p:hover, .footer-names:hover {
     }
 }
 
+/* Musik */
+/* Tombol Musik */
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #fff;
+  color: #333;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.music-btn:hover {
+  background: #f4f4f4;
+  transform: scale(1.1);
+}
+
+.music-btn i {
+  pointer-events: none;
+}
