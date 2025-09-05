@@ -325,15 +325,18 @@
   btn.addEventListener("click", () => {
     if (!isPlaying) {
       music.play();
-      btn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+      btn.classList.add("playing"); // mulai animasi
+      btn.innerHTML = '<i class="fa-solid fa-music"></i>'; // biarkan tetap musik
       isPlaying = true;
     } else {
       music.pause();
-      btn.innerHTML = '<i class="fa-solid fa-music"></i>';
+      btn.classList.remove("playing"); // stop animasi
+      btn.innerHTML = '<i class="fa-solid fa-music"></i>'; // ikon balik lagi
       isPlaying = false;
     }
   });
 </script>
+
 
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -434,3 +437,4 @@ function copyAccount(number) {
 
 </body>
 </html>
+
