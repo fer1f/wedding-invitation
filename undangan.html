@@ -1,18 +1,3 @@
-<?php
-// Koneksi ke database
-include 'config.php';
-
-// Cek apakah ada parameter success dari submit
-$showSuccessMessage = isset($_GET['success']) && $_GET['success'] == '1';
-
-// Ambil data ucapan
-$result = $conn->query("SELECT * FROM guest_messages ORDER BY created_at DESC");
-
-// Hitung ringkasan
-$count_hadir = $conn->query("SELECT COUNT(*) AS total FROM guest_messages WHERE attendance='Hadir'")->fetch_assoc()['total'];
-$count_tidak = $conn->query("SELECT COUNT(*) AS total FROM guest_messages WHERE attendance='Tidak Hadir'")->fetch_assoc()['total'];
-$count_all   = $conn->query("SELECT COUNT(*) AS total FROM guest_messages")->fetch_assoc()['total'];
-?>
 
 <!DOCTYPE html>
 <html lang="id">
@@ -420,3 +405,4 @@ function copyAccount(number) {
 
 </body>
 </html>
+
