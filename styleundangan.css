@@ -627,7 +627,7 @@ section {
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-    max-height: 500px;
+    max-height: 900px;
     width: 100%;         /* biar selalu ikut lebar parent */
     max-width: 100%;     /* jangan dibatasi */
     box-sizing: border-box; /* pastikan padding tidak bikin overflow */
@@ -1335,3 +1335,4 @@ p:hover, .footer-names:hover {
         width: 200px;
     }
 }
+
