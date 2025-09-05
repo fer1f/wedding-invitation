@@ -69,11 +69,42 @@
 
 
         <!-- Tombol -->
-        <a href="undangan.html" class="btn">
+        <a href="undangan.php" class="btn">
             <i class="fa-solid fa-envelope"></i> Buka Undangan
         </a>
     </div>
 </div>
+
+<!-- Floating Music Button -->
+<button id="music-btn" class="music-btn">
+  <i class="fa-solid fa-music"></i>
+</button>
+
+<audio id="bg-music" loop>
+  <source src="asset/music/lagu.mp3" type="audio/mpeg">
+  Browser kamu tidak mendukung audio.
+</audio>
+
+<script>
+  const music = document.getElementById("bg-music");
+  const btn = document.getElementById("music-btn");
+  let isPlaying = false;
+
+  btn.addEventListener("click", () => {
+    if (!isPlaying) {
+      music.play();
+      btn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+      isPlaying = true;
+    } else {
+      music.pause();
+      btn.innerHTML = '<i class="fa-solid fa-music"></i>';
+      isPlaying = false;
+    }
+  });
+</script>
+
+
+
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
@@ -130,4 +161,3 @@ updateCountdown();
 
 </body>
 </html>
-
