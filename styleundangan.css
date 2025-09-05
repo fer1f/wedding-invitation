@@ -1373,6 +1373,1380 @@ p:hover, .footer-names:hover {
     }
 }
 
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* supaya tidak nambah ruang kosong */
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    background: #c9d4c6; /* hijau pastel lembut */
+}
+
+/* Common Section Styles */
+section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.section-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+/* Background Patterns */
+.cover-bg, .section-bg, .quran-bg, .event-bg, .story-bg, 
+.gallery-bg, .gift-bg, .rsvp-bg, .messages-bg, .footer-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #f5f7f3 0%, #e8f2e6 100%);
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.8) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(200, 220, 180, 0.2) 0%, transparent 50%);
+    z-index: -1;
+}
+
+/* untuk tablet */
+@media (max-width: 768px) {
+    .wedding-container,
+    .wedding-event {
+        flex-direction: column;
+        gap: 40px; /* lebih kecil dari desktop */
+        padding: 20px;
+    }
+
+    .gallery-gift-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet */
+        gap: 10px;
+    }
+
+    .guest-container {
+        grid-template-columns: 1fr; /* 1 kolom penuh */
+    }
+
+    .messages-card,
+    .guest-form {
+        grid-column: 1 / 2;
+    }
+}
+
+/* Untuk HP kecil */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .couple-img,
+    .profile-photo {
+        width: 180px;
+        height: auto;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr; /* jadi 1 kolom penuh */
+    }
+
+    .photo-item img {
+        height: auto;
+        max-height: 200px;
+    }
+
+    .bank-card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .footer-ornament {
+        width: 200px;
+    }
+}
+
+
+/* Section 1: Cover */
+.wedding-container {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    background: url('asset/img/bg4.png') no-repeat center center;
+    background-size: cover;        /* biar background full */
+    align-items: center;           /* ⬅️ ini kunci biar section ketengah vertikal */
+    justify-content: center;       /* ⬅️ opsional: biar rata tengah horizontal */
+    gap: 150px;   
+}
+
+
+
+/* Kiri */
+.cover-section {
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+
+
+/* ✅ RESPONSIVE MODE */
+@media (max-width: 768px) {
+    .wedding-container {
+        flex-direction: column; /* ubah jadi atas-bawah */
+        gap: 40px;
+    }
+
+    .cover-section,
+    .bride-groom-section {
+        padding: 10px;
+        min-height: auto;
+    }
+
+    .couple-img {
+        width: 250px;   /* ubah sesuai kebutuhan */
+    height: auto;   /* biar proporsional */
+    }
+
+    .profile-photo {
+        width: 250px;   /* ubah sesuai kebutuhan */
+    height: auto;   /* biar tidak gepeng */
+    }
+}
+
+/* Section 2: wedding event */
+.wedding-event {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    background: url('asset/img/bg4.png') no-repeat center center;
+    background-size: cover;        /* biar background full */
+    align-items: center;           /* ⬅️ ini kunci biar section ketengah vertikal */
+    justify-content: center;       /* ⬅️ opsional: biar rata tengah horizontal */
+    gap: 220px;   
+}
+
+
+/* Kiri */
+.cover-section {
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+
+
+/* ✅ RESPONSIVE MODE */
+@media (max-width: 768px) {
+    .wedding-event {
+        flex-direction: column; /* ubah jadi atas-bawah */
+    }
+
+    .cover-section,
+    .bride-groom-section {
+        padding: 10px;
+        min-height: auto;
+    }
+
+    .couple-img {
+        width: 250px;   /* ubah sesuai kebutuhan */
+    height: auto;   /* biar proporsional */
+    }
+
+    .profile-photo {
+        width: 250px;   /* ubah sesuai kebutuhan */
+    height: auto;   /* biar tidak gepeng */
+    }
+}
+
+/* Section 3: Quran */
+.title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+.quran-section {
+    background: url('asset/img/bg1.png') no-repeat center center;
+    background-size: cover;   /* biar full layar */
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.quran-content {
+    max-width: 800px;
+    z-index: 1;
+}
+
+.arabic-text {
+    margin-bottom: 20px;
+}
+
+.arabic-text p {
+    font-size: 1.3rem;
+    line-height: 2;
+    font-family: 'Amiri', serif;
+    direction: rtl;
+    text-align: center;
+}
+
+.translation {
+    margin-bottom: 20px;
+}
+
+.translation p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.translation small {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.elemen img {
+    width: 700px;   /* atur lebar gambar */
+    height: auto;   /* biar tidak gepeng */
+    display: block; /* biar gampang diatur posisinya */
+    margin: 0 auto; /* biar ketengah */
+}
+
+@media (max-width: 768px) {
+    .elemen img {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+
+/* ===============================
+   Section 4: Gallery & Gift
+   =============================== */
+.gallery-gift-section {
+    background: linear-gradient(rgba(0, 90, 5, 0.007), rgba(0, 90, 5, 0.007)),  url('asset/img/background.png') no-repeat center center;
+    background-size: cover;
+    padding: 80px 20px;
+}
+
+.gallery-gift-container {
+    display: grid;
+    grid-template-columns: 2fr 2fr; /* Gallery lebih lebar, Gift lebih kecil */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+/* Responsive biar di HP jadi atas-bawah */
+@media (max-width: 768px) {
+    .gallery-gift-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Section Gallery & Gift */
+.gallery-content {
+    background: none;
+    padding: 20px;
+
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+    .photo-item img {
+        object-fit: cover;
+        height: 120px;
+    }
+}
+
+/* Modal Gallery */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.close:hover {
+    color: #bbb;
+}
+
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10000;
+}
+
+.nav-btn {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+/* Gift */
+
+.gift-content {
+    background: none;
+    padding: 20px;
+    text-align: center;
+}
+
+.gift-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.gift-icon-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.gift-icon {
+    font-size: 5rem;
+    margin: 20px 0;
+    filter: grayscale(100%);
+    font-family: "Segoe UI Symbol", "Apple Color Emoji", "Noto Emoji", sans-serif;
+    display: block;
+    cursor: pointer;
+}
+
+/* Animasi bounce */
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-15px); }
+    60% { transform: translateY(-8px); }
+}
+
+.gift-btn {
+    display: inline-block;
+    background: #244d35;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.gift-btn,
+.bank-card {
+    max-width: 100%;
+}
+
+.gift-btn:hover {
+    background: #487c5e;
+}
+
+.gift-options {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.address-option {
+    background: none;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.address-option h3 {
+    color: #000;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.address-option p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.bank-options {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    cursor: copy;
+}
+
+.bank-card {
+    background: none;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    min-width: 280px;
+}
+
+.bank-logo {
+    width: 60px;
+    height: auto;
+}
+
+.bank-details {
+    text-align: center;
+}
+
+.account-number {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.account-name {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+
+
+/* Section 5: RSVP */
+.section-header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.guest-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.section-divider {
+    width: 120px;
+    height: 3px;
+    background: #386315;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.guest-section {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.guest-container {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+/* ====== Card Styling ====== */
+.messages-list {
+    max-height: 250px;   /* atur tinggi maksimal sesuai kebutuhan */
+    overflow-y: auto;    /* biar bisa di-scroll */
+    padding-right: 5px;  /* biar teks nggak ketutup scrollbar */
+}
+
+/* styling scrollbar biar lebih rapi */
+.messages-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.messages-list::-webkit-scrollbar-track {
+    background: #e5ebe1;
+    border-radius: 10px;
+}
+
+.messages-list::-webkit-scrollbar-thumb {
+    background: #a7c4a0;
+    border-radius: 10px;
+}
+
+
+.summary-card {
+  background: #f1f5f1;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    max-height: 300px;
+}
+
+.guest-form {
+    background: #f1f5f1;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    max-height: 900px;
+    width: 100%;         /* biar selalu ikut lebar parent */
+    max-width: 100%;     /* jangan dibatasi */
+    box-sizing: border-box; /* pastikan padding tidak bikin overflow */
+}
+
+/* ====== Summary (Ringkasan) ====== */
+.summary-card h3 {
+    margin: 0 0 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2f3e2e;
+}
+
+.summary-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.summary-item {
+    text-align: center;
+    flex: 1;
+}
+
+.summary-item span {
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    color: #2f3e2e;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-buttons button {
+    flex: 1;
+    padding: 6px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 20px;
+    background: #d8e3d4;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+@media (max-width: 480px) {
+    .filter-buttons button {
+        flex: 1 1 100%;
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+.filter-buttons button.active,
+.filter-buttons button:hover {
+    background: #a7c4a0;
+    color: #fff;
+}
+
+/* ====== Messages (Daftar Ucapan) ====== */
+.messages-card {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.messages-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.messages-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #2f3e2e;
+}
+
+.messages-header select {
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.message-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.message-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.guest-avatar {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.guest-info {
+    flex: 1;
+}
+
+.guest-name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.attendance-badge {
+    display: inline-block;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-top: 2px;
+}
+
+.attendance-badge.hadir {
+    background: #d4f0d2;
+    color: #2e6b2c;
+}
+
+.attendance-badge.tidak-hadir {
+    background: #f9d6d6;
+    color: #7a1f1f;
+}
+
+.attendance-badge.ragu-ragu {
+    background: #fff0c2;
+    color: #7a6b1f;
+}
+
+.message-date {
+    font-size: 12px;
+    color: #666;
+}
+
+.message-text {
+    font-size: 14px;
+}
+
+.no-messages {
+    text-align: center;
+    padding: 50px 30px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    color: #770707;
+    font-size: 1.2rem;
+    box-shadow: rgba(0, 100, 0, 0.25);
+    margin: 20px 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.no-messages::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(224, 195, 224, 0.1) 0%, transparent 70%);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.no-messages p {
+    position: relative;
+    z-index: 1;
+    font-weight: 500;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.no-messages p::before {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ====== Guest Form (Buku Tamu) ====== */
+.guest-form {
+    grid-column: 1 / 3;
+}
+
+.guest-form h3 {
+    margin-bottom: 15px;
+    color: #2f3e2e;
+}
+
+.guest-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.guest-form input,
+.guest-form textarea,
+.guest-form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.attendance-options {
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+}
+
+.attendance-options input {
+    margin-right: 5px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .form-row {
+        flex-direction: column; /* jadi 1 kolom */
+    }
+
+    .form-group {
+        width: 100%;           /* biar full */
+    }
+
+    .attendance-options {
+        display: flex;
+        flex-direction: column; /* radio button ke bawah */
+        gap: 8px;
+    }
+}
+
+.form-row .form-group.name-group {
+    flex: 1.71; /* kolom nama lebih besar */
+}
+
+.form-row input[type="text"] {
+    flex: 1; /* biar lebar penuh */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.attendance-options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* sembunyikan radio aslinya */
+.attendance-options input[type="radio"] {
+    display: none;
+}
+
+/* gaya tombol */
+.attendance-options label {
+    padding: 8px 14px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+/* efek hover */
+.attendance-options label:hover {
+    background: #eee;
+}
+
+/* tombol aktif (ketika radio dicentang) */
+.attendance-options input[type="radio"]:checked + label {
+    background: #317a34;
+    color: white;
+    border-color: #317a34;
+}
+
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;      /* kalau layar sempit tombol bisa turun ke bawah */
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 15px;
+}
+
+.form-actions button {
+    flex: 1;              /* biar sama panjang */
+    min-width: 120px;     /* minimal biar tidak terlalu kecil */
+    max-width: 100%;
+}
+
+.btn-primary {
+    flex: 1;
+    background: #4a7053;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #3a5a42;
+}
+
+.btn-secondary {
+    flex: 1;
+    background: #ccc;
+    color: #333;
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #aaa;
+}
+
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+    .guest-container {
+        grid-template-columns: 1fr;
+    }
+
+    .messages-card {
+        grid-column: 1 / 2;
+    }
+
+    .guest-form {
+        grid-column: 1 / 2;
+    }
+}
+
+
+
+/* Section 10: Footer */
+.footer-section {
+    background: url('asset/img/bg1.png') repeat center center; 
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    min-height: auto;
+}
+
+.footer-content {
+    max-width: 500px;      /* biar ga terlalu lebar */
+    margin: 0 auto; 
+}
+
+.footer-decoration, .footer-decoration-bottom {
+    width: 150px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 5px auto;
+}
+
+.footer-gratitude {
+    font-size: 32px;
+    color: #000000;
+    margin-bottom: 2px;
+    font-family: 'Allura', cursive;
+    transform: scaleY(1.5); /* tinggi font dipanjangin */
+    display: inline-block;
+    letter-spacing: 2px;
+}
+
+.footer-names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 22px;
+    color: #000000;
+    transform: scaleY(1.2); /* tinggi font dipanjangin */
+    display: inline-block;  
+    letter-spacing: 1px;
+}
+
+.footer-ornament {
+    width: 500px;         /* atur lebar sesuai kebutuhan */
+    margin: 2px auto;    /* kasih jarak atas-bawah & center */
+    display: block;       /* biar mudah diatur */
+}
+
+@media (max-width: 480px) {
+    .footer-ornament {
+        width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-gratitude {
+        font-size: 26px;
+        transform: none; /* hilangkan scale */
+        line-height: 1.3;
+    }
+    .footer-names {
+        font-size: 18px;
+        transform: none;
+        line-height: 1.2;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .invitation-title {
+        font-size: 1.8rem;
+    }
+    
+    .couple-names h2 {
+        font-size: 2rem;
+    }
+    
+    .couple-profiles {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .couple-separator {
+        font-size: 2rem;
+        transform: rotate(90deg);
+    }
+    
+    .event-details {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .location {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .timeline-item {
+        padding-left: 60px;
+    }
+    
+    .timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-icon {
+        left: 5px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .bank-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .bank-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .message-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .guest-info {
+        min-width: auto;
+    }
+    
+    .photo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        max-height: 70%;
+    }
+    
+    .rsvp-form {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 40px 15px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .invitation-title {
+        font-size: 1.5rem;
+    }
+    
+    .couple-names h2 {
+        font-size: 1.8rem;
+    }
+    
+    .profile-card {
+        padding: 20px 15px;
+    }
+    
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .timeline-content {
+        padding: 20px;
+    }
+    
+    .rsvp-form {
+        padding: 20px;
+    }
+    
+    .message-card {
+        padding: 20px;
+    }
+    
+    .photo-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+    .photo-item img {
+        height: 150px;
+    }
+}
+
+/* Loading Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+/* Efek hover untuk teks judul */
+h3:hover, .section-title:hover, .footer-gratitude:hover {
+    color: #2f6d31; /* hijau tua elegan */
+    text-shadow: 0 2px 8px rgba(0, 100, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Efek hover untuk teks biasa */
+p:hover, .footer-names:hover {
+    color: #487c5e; /* hijau lembut */
+    transform: scale(1.03); /* sedikit membesar */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* ===============================
+   Tambahan CSS Mobile Friendly
+   =============================== */
+
+/* Umum untuk mobile */
+@media (max-width: 480px) {
+    body {
+        font-size: 15px; /* biar masih enak dibaca */
+        line-height: 1.7;
+    }
+
+    section {
+        padding: 25px 15px;
+        min-height: auto; /* jangan terlalu tinggi */
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Cover & Couple */
+    .wedding-container,
+    .wedding-event {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .couple-img,
+    .profile-photo {
+        width: 160px;
+        height: auto;
+    }
+
+    /* Gallery */
+    .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .photo-item img {
+        height: auto;
+        max-height: 200px;
+    }
+
+    /* Gift */
+    .bank-options {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .bank-card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    /* RSVP */
+    .guest-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .messages-card,
+    .guest-form {
+        grid-column: 1 / 2;
+    }
+
+    .guest-form input,
+    .guest-form textarea,
+    .guest-form select {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    /* Footer */
+    .footer-gratitude {
+        font-size: 22px;
+        line-height: 1.4;
+    }
+
+    .footer-names {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+
+    .footer-ornament {
+        width: 200px;
+    }
+}
 /* Musik */
 /* Tombol Musik */
 .music-btn {
@@ -1403,3 +2777,14 @@ p:hover, .footer-names:hover {
 .music-btn i {
   pointer-events: none;
 }
+
+/* Efek berputar kalau musik play */
+.music-btn.playing {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
