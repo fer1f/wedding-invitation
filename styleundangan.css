@@ -884,6 +884,23 @@ section {
     flex: 1;
 }
 
+/* Mobile */
+@media (max-width: 480px) {
+    .form-row {
+        flex-direction: column; /* jadi 1 kolom */
+    }
+
+    .form-group {
+        width: 100%;           /* biar full */
+    }
+
+    .attendance-options {
+        display: flex;
+        flex-direction: column; /* radio button ke bawah */
+        gap: 8px;
+    }
+}
+
 .form-row .form-group.name-group {
     flex: 1.71; /* kolom nama lebih besar */
 }
@@ -1335,4 +1352,3 @@ p:hover, .footer-names:hover {
         width: 200px;
     }
 }
-
