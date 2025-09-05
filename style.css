@@ -235,3 +235,44 @@
         .btn:hover {
             background: #555;
         }
+
+/* Musik */
+/* Tombol Musik */
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #fff;
+  color: #333;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.music-btn:hover {
+  background: #f4f4f4;
+  transform: scale(1.1);
+}
+
+.music-btn i {
+  pointer-events: none;
+}
+
+/* Efek berputar kalau musik play */
+.music-btn.playing {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
