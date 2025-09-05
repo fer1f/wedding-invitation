@@ -936,11 +936,14 @@ section {
     gap: 10px;
     flex-wrap: wrap;      /* kalau layar sempit tombol bisa turun ke bawah */
     width: 100%;
+    box-sizing: border-box;
+    margin-top: 15px;
 }
 
 .form-actions button {
     flex: 1;              /* biar sama panjang */
     min-width: 120px;     /* minimal biar tidak terlalu kecil */
+    max-width: 100%;
 }
 
 .btn-primary {
