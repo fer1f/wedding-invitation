@@ -628,6 +628,9 @@ section {
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.08);
     max-height: 500px;
+    width: 100%;         /* biar selalu ikut lebar parent */
+    max-width: 100%;     /* jangan dibatasi */
+    box-sizing: border-box; /* pastikan padding tidak bikin overflow */
 }
 
 /* ====== Summary (Ringkasan) ====== */
@@ -931,6 +934,13 @@ section {
 .form-actions {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;      /* kalau layar sempit tombol bisa turun ke bawah */
+    width: 100%;
+}
+
+.form-actions button {
+    flex: 1;              /* biar sama panjang */
+    min-width: 120px;     /* minimal biar tidak terlalu kecil */
 }
 
 .btn-primary {
