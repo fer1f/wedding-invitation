@@ -57,12 +57,73 @@ section {
 }
 
 /* untuk tablet */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .wedding-container,
     .wedding-event {
-        gap: 80px;
+        flex-direction: column;
+        gap: 40px; /* lebih kecil dari desktop */
+        padding: 20px;
+    }
+
+    .gallery-gift-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet */
+        gap: 10px;
+    }
+
+    .guest-container {
+        grid-template-columns: 1fr; /* 1 kolom penuh */
+    }
+
+    .messages-card,
+    .guest-form {
+        grid-column: 1 / 2;
     }
 }
+
+/* Untuk HP kecil */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .couple-img,
+    .profile-photo {
+        width: 180px;
+        height: auto;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr; /* jadi 1 kolom penuh */
+    }
+
+    .photo-item img {
+        height: auto;
+        max-height: 200px;
+    }
+
+    .bank-card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .footer-ornament {
+        width: 200px;
+    }
+}
+
 
 /* Section 1: Cover */
 .wedding-container {
