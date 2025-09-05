@@ -1,3 +1,18 @@
+<?php
+// Koneksi ke database
+include 'config.php';
+
+// Cek apakah ada parameter success dari submit
+$showSuccessMessage = isset($_GET['success']) && $_GET['success'] == '1';
+
+// Ambil data ucapan
+$result = $conn->query("SELECT * FROM guest_messages ORDER BY created_at DESC");
+
+// Hitung ringkasan
+$count_hadir = $conn->query("SELECT COUNT(*) AS total FROM guest_messages WHERE attendance='Hadir'")->fetch_assoc()['total'];
+$count_tidak = $conn->query("SELECT COUNT(*) AS total FROM guest_messages WHERE attendance='Tidak Hadir'")->fetch_assoc()['total'];
+$count_all   = $conn->query("SELECT COUNT(*) AS total FROM guest_messages")->fetch_assoc()['total'];
+?>
 
 <!DOCTYPE html>
 <html lang="id">
@@ -9,6 +24,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Allura&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
 </head>
 <body>
 
@@ -60,7 +76,7 @@
 <div class="cover-section">
       <div class="cover-content">
           <div class="couple-illustration">
-            <a href="https://www.google.com/maps/dir/-6.9445747,107.5725992/-6.924005,107.640797/@-6.9237861,107.6406907,20.96z/data=!4m5!4m4!1m1!4e1!1m0!3e9?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" 
+            <a href="https://maps.app.goo.gl/jNNcCcVWZiM4GE5o8" 
                  target="_blank" 
                  rel="noopener noreferrer">
                 <img src="asset/img/couple3.png" alt="Couple" class="couple-img" data-aos="fade-down-right">
@@ -68,7 +84,7 @@
           </div>
       </div>
   </div>
-</div>
+
 
   <!-- Kanan: Bride & Groom -->
   <div class="bride-groom-section">
@@ -80,104 +96,98 @@
           </div>
       </div>
   </div>
-</div>
+
 </section>
 
 
-<!-- Section 4: Gallery -->
-<section class="wedding-container">
-  <div class="cover-section">
-      <div class="cover-content">
-          <div class="couple-illustration">
-            <div class="gallery-content">
-                <div class="gallery-header">
-                    <h2 class="section-title" data-aos="fade-down">✨ A Glimpse of Us ✨</h2>
-                </div>
-                <div class="photo-grid" >
-                    <div class="photo-item">
-                        <img src="asset/img/foto1.png" alt="Photo 1" onclick="openModal(this)" data-aos="flip-down">
-                    </div>
-                    <div class="photo-item">
-                        <img src="asset/img/foto2.png" alt="Photo 2" onclick="openModal(this)" data-aos="flip-down">
-                    </div>
-                    <div class="photo-item">
-                        <img src="asset/img/foto3.png" alt="Photo 3" onclick="openModal(this)" data-aos="flip-down">
-                    </div>
-                    <div class="photo-item">
-                        <img src="asset/img/foto4.png" alt="Photo 4" onclick="openModal(this)" data-aos="flip-down">
-                    </div>
-                    <div class="photo-item">
-                        <img src="asset/img/foto5.png" alt="Photo 5" onclick="openModal(this)" data-aos="flip-down">
-                    </div>
-                    <div class="photo-item">
-                        <img src="asset/img/foto6.png" alt="Photo 6" onclick="openModal(this)" data-aos="flip-down">
-                    </div>
-                    <div class="photo-item">
-                        <img src="asset/img/foto7.png" alt="Photo 7" onclick="openModal(this)" data-aos="flip-down">
-                    </div>
-                    <div class="photo-item">
-                        <img src="asset/img/foto8.png" alt="Photo 8" onclick="openModal(this)" data-aos="flip-down">
-                    </div>
-                    <div class="photo-item">
-                        <img src="asset/img/foto9.png" alt="Photo 9" onclick="openModal(this)" data-aos="flip-down">
-                    </div>
-                </div>
+<!-- Section 4: Gallery & Gift -->
+<section class="gallery-gift-section">
+  <div class="gallery-gift-container">
+
+    <!-- Gallery -->
+    <div class="gallery-content">
+      <div class="gallery-header">
+        <h2 class="section-title" data-aos="fade-down">✨ A Glimpse of Us ✨</h2>
+      </div>
+
+      <div class="photo-grid">
+        <div class="photo-item">
+          <img src="asset/img/foto1.png" alt="Photo 1" onclick="openModal(this)" data-aos="flip-down">
+        </div>
+        <div class="photo-item">
+          <img src="asset/img/foto2.png" alt="Photo 2" onclick="openModal(this)" data-aos="flip-down">
+        </div>
+        <div class="photo-item">
+          <img src="asset/img/foto3.png" alt="Photo 3" onclick="openModal(this)" data-aos="flip-down">
+        </div>
+        <div class="photo-item">
+          <img src="asset/img/foto4.png" alt="Photo 4" onclick="openModal(this)" data-aos="flip-down">
+        </div>
+        <div class="photo-item">
+          <img src="asset/img/foto5.png" alt="Photo 5" onclick="openModal(this)" data-aos="flip-down">
+        </div>
+        <div class="photo-item">
+          <img src="asset/img/foto6.png" alt="Photo 6" onclick="openModal(this)" data-aos="flip-down">
+        </div>
+        <div class="photo-item">
+          <img src="asset/img/foto7.png" alt="Photo 7" onclick="openModal(this)" data-aos="flip-down">
+        </div>
+        <div class="photo-item">
+          <img src="asset/img/foto8.png" alt="Photo 8" onclick="openModal(this)" data-aos="flip-down">
+        </div>
+        <div class="photo-item">
+          <img src="asset/img/foto9.png" alt="Photo 9" onclick="openModal(this)" data-aos="flip-down">
+        </div>
+      </div>
+    </div>
+
+    <!-- Gift -->
+    <div class="gift-content">
+      <h2 class="section-title" data-aos="fade-down">Wedding Gift</h2>
+      <p class="gift-subtitle" data-aos="fade-left">
+        Do'a restu anda sangat berarti bagi kami. Tanpa mengurangi rasa hormat, <br>
+        kepada para tamu yang ingin memberikan gift kepada kedua mempelai, <br>
+        silahkan melalui alamat dibawah ini:
+      </p>
+
+      <div class="gift-icon-container">
+        <div class="gift-icon bounce" data-aos="fade-down">🎁</div>
+        <a href="https://www.google.com/maps/dir/-6.9445747,107.5725992/-6.924005,107.640797/@-6.9237861,107.6406907,20.96z/data=!4m5!4m4!1m1!4e1!1m0!3e9?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D"
+           target="_blank" class="gift-btn" data-aos="zoom-in">Kirim Gift</a>
+      </div>
+
+      <div class="gift-options">
+        <div class="address-option" data-aos="fade-up">
+          <h3>Alamat Rumah</h3>
+          <p>
+            Jl. Kiaracondong Barat No. 67 RT 03/08 <br>
+            Kec. Batununggal Kel. Kebon Gedang Kota Bandung (40274)
+          </p>
+        </div>
+
+        <div class="bank-options">
+          <div class="bank-card bca" onclick="copyAccount('2802303441')" data-aos="fade-right">
+            <img src="asset/img/bca.png" alt="BCA" class="bank-logo">
+            <div class="bank-details">
+              <p class="account-number">2802303441</p>
+              <p class="account-name">Syahidyah</p>
             </div>
           </div>
-      </div>
-  </div>
 
-  <div class="bride-groom-section">
-      <div class="content-container">
-          <div class="couple-profiles">
-              <div class="bride-profile profile-card">
-                <div class="gift-content">
-                      <div class="gift-header">
-                          <h2 class="section-title"data-aos="fade-down">Wedding Gift</h2>
-                          <p class="gift-subtitle" data-aos="fade-left">Do'a restu anda sangat berarti bagi kami. Tanpa mengurangi rasa hormat,
-                          <br>
-                          kepada para tamu yang ingin memberikan gift kepada kedua mempelai,
-                          <br>silahkan melalui alamat dibawah ini:</p>
-                      </div>
-                      
-                      <div class="gift-icon-container">
-                        <div class="gift-icon bounce" data-aos="fade-down">🎁</div>
-                        <a href="https://www.google.com/maps/dir/-6.9445747,107.5725992/-6.924005,107.640797/@-6.9237861,107.6406907,20.96z/data=!4m5!4m4!1m1!4e1!1m0!3e9?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D"
-                         target="_blank" class="gift-btn" data-aos="zoom-in">Kirim Gift</a>
-                      </div>
-                      
-                      <div class="gift-options">
-                          <div class="address-option" data-aos="fade-up">
-                              <h3>Alamat Rumah</h3>
-                              <p>Jl. Kiaracondong Barat No. 67 RT 03/08 
-                               <br>Kec. Batununggal Kel. Kebon Gedang Kota Bandung (40274)</p>
-                          </div>
-                          
-                          <div class="bank-options">
-                            <div class="bank-card bca" onclick="copyAccount('2802303441')" data-aos="fade-right">
-                                <img src="asset/img/bca.png" alt="BCA" class="bank-logo">
-                                <div class="bank-details">
-                                    <p class="account-number">2802303441</p>
-                                    <p class="account-name">Syahidyah</p>
-                                </div>
-                            </div>
-                            
-                            <div class="bank-card mandiri" onclick="copyAccount('1100015775361')" data-aos="fade-left">
-                                <img src="asset/img/mandiri.png" alt="Mandiri" class="bank-logo">
-                                <div class="bank-details">
-                                    <p class="account-number">1100015775361</p>
-                                    <p class="account-name">Rezky Agust Setiawan</p>
-                                </div>
-                            </div>
-                          </div>
-                      </div>
-                  </div>
-                </div>
+          <div class="bank-card mandiri" onclick="copyAccount('1100015775361')" data-aos="fade-left">
+            <img src="asset/img/mandiri.png" alt="Mandiri" class="bank-logo">
+            <div class="bank-details">
+              <p class="account-number">1100015775361</p>
+              <p class="account-name">Rezky Agust Setiawan</p>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+
   </div>
 </section>
+
 
 
 <!-- Section 5: RSVP -->
@@ -276,7 +286,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="name">Ucapan</label>
+                  <label for="name">Ucapan & doa</label>
                 <textarea name="message" placeholder="Tulis ucapan terbaik Anda di sini..." rows="3"></textarea>
                 </div>
                 <div class="form-actions">
@@ -409,5 +419,4 @@ function copyAccount(number) {
 </script>
 
 </body>
-
 </html>
