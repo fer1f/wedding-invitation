@@ -303,7 +303,7 @@ section {
    Section 4: Gallery & Gift
    =============================== */
 .gallery-gift-section {
-    background: url('asset/img/bg3.png') no-repeat center center;
+    background: url('asset/img/background.png') no-repeat center center;
     background-size: cover;
     padding: 80px 20px;
 }
@@ -1372,3 +1372,4 @@ p:hover, .footer-names:hover {
         width: 200px;
     }
 }
+
