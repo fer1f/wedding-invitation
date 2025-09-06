@@ -218,7 +218,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  width: 87%;
+  width: 100%;
 }
 
 .photo-item {
@@ -232,8 +232,7 @@ section {
 
 .photo-item:hover { transform: scale(1.03); }
 .photo-item img {
-  width: 100%;
-  height: 150px;
+  width: 150%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -758,6 +757,7 @@ section {
   .photo-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    width: 100%;
   }
 
   .profile-photo-event { width: 500px; max-width: 100%; }
@@ -778,8 +778,8 @@ section {
 
   .profile-photo-event { width: 460px; }
 
-  .photo-grid { grid-template-columns: 1fr; gap: 20px; }
-  .photo-item img { height: auto; max-height: 220px; object-fit: cover; }
+  .photo-grid { grid-template-columns: 1fr; gap: 20px; width: 100%;}
+  .photo-item img { height: auto; max-height: 200px; object-fit: cover; width: 150%;}
 
   .bank-options { flex-direction: column; gap: 15px; }
   .bank-card { max-width: 100%; width: 100%; min-width: 0; }
