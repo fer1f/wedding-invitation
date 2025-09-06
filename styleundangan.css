@@ -70,63 +70,74 @@ section {
     z-index: -1;
 }
 
-/* ===== MOBILE / TABLET ===== */
+/* untuk tablet */
 @media (max-width: 768px) {
-  .wedding-container {
-    display: block;               /* ubah ke block biar vertikal */
-    height: 100vh;
-    overflow-y: auto;             /* biar bisa scroll */
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; /* biar smooth di iOS */
-  }
+    .wedding-container,
+    .wedding-event {
+        flex-direction: column;
+        gap: 40px; /* lebih kecil dari desktop */
+        padding: 20px;
+    }
 
-  .cover-section,
-  .bride-groom-section {
-    min-height: 100vh;            /* tiap section 1 layar penuh */
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    scroll-snap-align: start;     /* snap tiap section */
-  }
+    .gallery-gift-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 
-  .couple-img,
-  .profile-photo {
-    width: 400px;   /* perbesar dari 160px jadi 220px */
-    max-width: 100%; /* biar tidak overflow */
-    height: auto;
-  }
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet */
+        gap: 10px;
+    }
+
+    .guest-container {
+        grid-template-columns: 1fr; /* 1 kolom penuh */
+    }
+
+    .messages-card,
+    .guest-form {
+        grid-column: 1 / 2;
+    }
 }
 
-/* ===== MOBILE / HP ===== */
+/* Untuk HP kecil */
 @media (max-width: 480px) {
-  .wedding-container {
-    display: block;               /* ubah ke block biar vertikal */
-    height: 100vh;
-    overflow-y: auto;             /* biar bisa scroll */
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; /* biar smooth di iOS */
-  }
+    body {
+        font-size: 14px;
+    }
 
-  .cover-section,
-  .bride-groom-section {
-    min-height: 100vh;            /* tiap section 1 layar penuh */
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    scroll-snap-align: start;     /* snap tiap section */
-  }
+    section {
+        padding: 30px 15px;
+    }
 
-  .couple-img,
-  .profile-photo {
-    width: 400px;   /* perbesar dari 160px jadi 220px */
-    max-width: 100%; /* biar tidak overflow */
-    height: auto;
-  }
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .couple-img,
+    .profile-photo {
+        width: 180px;
+        height: auto;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr; /* jadi 1 kolom penuh */
+    }
+
+    .photo-item img {
+        height: auto;
+        max-height: 200px;
+    }
+
+    .bank-card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .footer-ornament {
+        width: 200px;
+    }
 }
+
 
 /* Section 1: Cover */
 .wedding-container {
@@ -151,7 +162,32 @@ section {
     align-items: center;
     gap: 10px;
     text-align: center;
-    flex: 1; 
+}
+
+
+
+/* ✅ RESPONSIVE MODE */
+@media (max-width: 768px) {
+    .wedding-container {
+        flex-direction: column; /* ubah jadi atas-bawah */
+        gap: 40px;
+    }
+
+    .cover-section,
+    .bride-groom-section {
+        padding: 10px;
+        min-height: auto;
+    }
+
+    .couple-img {
+        width: 250px;   /* ubah sesuai kebutuhan */
+    height: auto;   /* biar proporsional */
+    }
+
+    .profile-photo {
+        width: 250px;   /* ubah sesuai kebutuhan */
+    height: auto;   /* biar tidak gepeng */
+    }
 }
 
 /* Section 2: wedding event */
@@ -1274,7 +1310,6 @@ p:hover, .footer-names:hover {
     .profile-photo {
         width: 160px;
         height: auto;
-        object-fit: contain;    
     }
 
     /* Gallery */
@@ -1378,5 +1413,4 @@ p:hover, .footer-names:hover {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
 
