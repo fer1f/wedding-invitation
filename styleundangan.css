@@ -70,106 +70,34 @@ section {
     z-index: -1;
 }
 
-/* untuk tablet */
 @media (max-width: 768px) {
-    .wedding-container,
-    .wedding-event {
-        flex-direction: column;
-        gap: 40px; /* lebih kecil dari desktop */
-        padding: 20px;
-    }
-
-    .gallery-gift-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .photo-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet */
-        gap: 10px;
-    }
-
-    .guest-container {
-        grid-template-columns: 1fr; /* 1 kolom penuh */
-    }
-
-    .messages-card,
-    .guest-form {
-        grid-column: 1 / 2;
-    }
-
-    .couple-img-container {
-    width: 350px;   /* perbesar gambar */
-    height: auto;
+  .wedding-container, .wedding-event {
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+  }
+  .gallery-gift-container {
+    grid-template-columns: 1fr;
+  }
+  .guest-container {
+    grid-template-columns: 1fr;
+  }
 }
 
-.profile-photo-container {
-    width: 430px;   /* perbesar gambar */
-    height: auto;
-}
-
-.couple-img-event{
-    width: 350px;   /* perbesar gambar */
-    height: auto;
-}
-
-.profile-photo-event {
-    width: 600px;   /* perbesar gambar */
-    height: auto;
-}
-}
-
-/* Untuk HP kecil */
 @media (max-width: 480px) {
-    body {
-        font-size: 14px;
-    }
-
-    section {
-        padding: 30px 15px;
-    }
-
-    .section-title {
-        font-size: 1.6rem;
-    }
-
-    .couple-img-container {
-    width: 300px;   /* perbesar gambar */
+  .couple-img-container,
+  .profile-photo-container,
+  .couple-img-event {
+    width: 250px; 
     height: auto;
-    }
-
-    .profile-photo-container {
-        width: 300px;   /* perbesar gambar */
-        height: auto;
-    }
-
-    .couple-img-event{
-        width: 300px;   /* perbesar gambar */
-        height: auto;
-    }
-
-    .profile-photo-event {
-        width: 500px;   /* perbesar gambar */
-        height: auto;
-    }
-
-    .photo-grid {
-        grid-template-columns: 1fr; /* jadi 1 kolom penuh */
-    }
-
-    .photo-item img {
-        height: auto;
-        max-height: 200px;
-    }
-
-    .bank-card {
-        width: 100%;
-        max-width: 280px;
-    }
-
-    .footer-ornament {
-        width: 200px;
-    }
+  }
+  .profile-photo-event {
+    width: 300px;
+    height: auto;
+  }
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Gambar untuk desktop */
@@ -221,29 +149,6 @@ section {
 
 
 
-/* ✅ RESPONSIVE MODE */
-@media (max-width: 768px) {
-    .wedding-container {
-        flex-direction: column; /* ubah jadi atas-bawah */
-        gap: 40px;
-    }
-
-    .cover-section,
-    .bride-groom-section {
-        padding: 10px;
-        min-height: auto;
-    }
-
-    .couple-img {
-        width: 250px;   /* ubah sesuai kebutuhan */
-    height: auto;   /* biar proporsional */
-    }
-
-    .profile-photo {
-        width: 250px;   /* ubah sesuai kebutuhan */
-    height: auto;   /* biar tidak gepeng */
-    }
-}
 
 /* Section 2: wedding event */
 .wedding-event {
