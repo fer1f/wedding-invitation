@@ -139,7 +139,7 @@ section {
    =========================== */
 .title {
   font-family: 'Dancing Script', cursive;
-  font-size: 22px;
+  font-size: 1.1rem;
   margin-bottom: 5px;
 }
 
@@ -158,7 +158,7 @@ section {
 .arabic-text { margin-bottom: 20px; }
 
 .arabic-text p {
-  font-size: 1.3rem;
+  font-size: 0.95rem;
   line-height: 2;
   font-family: 'Amiri', serif;
   direction: rtl;
@@ -167,8 +167,8 @@ section {
 
 .translation { margin-bottom: 20px; }
 .translation p {
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 0.85rem;
+  line-height: 1.2;
   font-style: italic;
   margin-bottom: 10px;
 }
@@ -178,7 +178,7 @@ section {
 }
 
 .elemen img {
-  width: 700px;
+  width: 550px;
   max-width: 100%;
   height: auto;
   margin: 0 auto;
@@ -217,8 +217,8 @@ section {
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: 100%;
+  gap: 40px;
+  width: 87%;
 }
 
 .photo-item {
@@ -757,7 +757,7 @@ section {
 
   .photo-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 20px;
   }
 
   .profile-photo-event { width: 500px; max-width: 100%; }
@@ -778,7 +778,7 @@ section {
 
   .profile-photo-event { width: 460px; }
 
-  .photo-grid { grid-template-columns: 1fr; gap: 12px; }
+  .photo-grid { grid-template-columns: 1fr; gap: 20px; }
   .photo-item img { height: auto; max-height: 220px; object-fit: cover; }
 
   .bank-options { flex-direction: column; gap: 15px; }
