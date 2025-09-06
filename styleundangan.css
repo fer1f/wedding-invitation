@@ -97,6 +97,26 @@ section {
     .guest-form {
         grid-column: 1 / 2;
     }
+
+    .couple-img-container {
+    width: 350px;   /* perbesar gambar */
+    height: auto;
+}
+
+.profile-photo-container {
+    width: 430px;   /* perbesar gambar */
+    height: auto;
+}
+
+.couple-img-event{
+    width: 350px;   /* perbesar gambar */
+    height: auto;
+}
+
+.profile-photo-event {
+    width: 600px;   /* perbesar gambar */
+    height: auto;
+}
 }
 
 /* Untuk HP kecil */
@@ -113,9 +133,23 @@ section {
         font-size: 1.6rem;
     }
 
-    .couple-img,
-    .profile-photo {
-        width: 180px;
+    .couple-img-container {
+    width: 300px;   /* perbesar gambar */
+    height: auto;
+    }
+
+    .profile-photo-container {
+        width: 300px;   /* perbesar gambar */
+        height: auto;
+    }
+
+    .couple-img-event{
+        width: 300px;   /* perbesar gambar */
+        height: auto;
+    }
+
+    .profile-photo-event {
+        width: 500px;   /* perbesar gambar */
         height: auto;
     }
 
@@ -138,6 +172,26 @@ section {
     }
 }
 
+/* Gambar untuk desktop */
+.couple-img-container {
+    width: 450px;   /* perbesar gambar */
+    height: auto;
+}
+
+.profile-photo-container {
+    width: 450px;   /* perbesar gambar */
+    height: auto;
+}
+
+.couple-img-event{
+    width: 450px;   /* perbesar gambar */
+    height: auto;
+}
+
+.profile-photo-event {
+    width: 700px;   /* perbesar gambar */
+    height: auto;
+}
 
 /* Section 1: Cover */
 .wedding-container {
@@ -1307,9 +1361,23 @@ p:hover, .footer-names:hover {
         text-align: center;
     }
 
-    .couple-img,
-    .profile-photo {
-        width: 160px;
+    .couple-img-container {
+    width: 300px;   /* perbesar gambar */
+    height: auto;
+    }
+
+    .profile-photo-container {
+        width: 300px;   /* perbesar gambar */
+        height: auto;
+    }
+
+    .couple-img-event{
+        width: 300px;   /* perbesar gambar */
+        height: auto;
+    }
+
+    .profile-photo-event {
+        width: 500px;   /* perbesar gambar */
         height: auto;
     }
 
