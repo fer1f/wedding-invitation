@@ -93,11 +93,40 @@ section {
 
   .couple-img,
   .profile-photo {
-    width: 85%;
-    max-height: 90vh;
+    width: 220px;   /* perbesar dari 160px jadi 220px */
+    max-width: 90%; /* biar tidak overflow */
+    height: auto;
   }
 }
 
+/* ===== MOBILE / HP ===== */
+@media (max-width: 480px) {
+  .wedding-container {
+    display: block;               /* ubah ke block biar vertikal */
+    height: 100vh;
+    overflow-y: auto;             /* biar bisa scroll */
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* biar smooth di iOS */
+  }
+
+  .cover-section,
+  .bride-groom-section {
+    min-height: 100vh;            /* tiap section 1 layar penuh */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;     /* snap tiap section */
+  }
+
+  .couple-img,
+  .profile-photo {
+    width: 220px;   /* perbesar dari 160px jadi 220px */
+    max-width: 90%; /* biar tidak overflow */
+    height: auto;
+  }
+}
 
 /* Section 1: Cover */
 .wedding-container {
