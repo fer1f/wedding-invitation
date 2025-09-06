@@ -93,8 +93,8 @@ section {
 
   .couple-img,
   .profile-photo {
-    width: 220px;   /* perbesar dari 160px jadi 220px */
-    max-width: 90%; /* biar tidak overflow */
+    width: 400px;   /* perbesar dari 160px jadi 220px */
+    max-width: 100%; /* biar tidak overflow */
     height: auto;
   }
 }
@@ -122,8 +122,8 @@ section {
 
   .couple-img,
   .profile-photo {
-    width: 220px;   /* perbesar dari 160px jadi 220px */
-    max-width: 90%; /* biar tidak overflow */
+    width: 400px;   /* perbesar dari 160px jadi 220px */
+    max-width: 100%; /* biar tidak overflow */
     height: auto;
   }
 }
@@ -1378,4 +1378,5 @@ p:hover, .footer-names:hover {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
 
