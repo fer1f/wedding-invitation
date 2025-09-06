@@ -779,7 +779,7 @@ section {
   .profile-photo-event { width: 460px; }
 
   .photo-grid { grid-template-columns: 1fr; gap: 20px; width: 100%;}
-  .photo-item img {height: 200%; max-height: 700px; object-fit: contain; width: 150%; object-position: center;
+  .photo-item img {height: 200%; max-height: 700px; object-fit: cover; width: 150%; object-position: center;
 }
 
   .bank-options { flex-direction: column; gap: 15px; }
@@ -814,6 +814,7 @@ section {
   .music-btn { width: 50px; height: 50px; font-size: 20px; }
   .gift-icon { font-size: 4rem; }
 }
+
 
 
 
