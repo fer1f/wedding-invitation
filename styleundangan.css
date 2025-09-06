@@ -162,6 +162,7 @@ section {
     align-items: center;
     gap: 10px;
     text-align: center;
+    flex: 1; 
 }
 
 
